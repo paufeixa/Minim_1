@@ -1,18 +1,18 @@
 public class Product {
-    String productID;
+    String productId;
     String name;
     double price;
-    double numSales;
+    int numSales;
 
-    public Product(String productID, String name, double price){
-        this.productID = productID;
+    public Product(String productId, String name, double price){
+        this.productId = productId;
         this.name = name;
         this.price = price;
         this.numSales = 0;
     }
 
     public String getProductId(){
-        return productID;
+        return productId;
     }
 
     public String getDescription(){
@@ -23,7 +23,7 @@ public class Product {
         return price;
     }
 
-    public double getNumSales(){
+    public int getNumSales(){
         return numSales;
     }
 }

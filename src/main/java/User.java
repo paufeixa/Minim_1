@@ -1,10 +1,10 @@
 public class User {
-    String userID;
+    String userId;
     String name;
     String surname;
 
-    public User(String userID, String name, String surname){
-        this.userID = userID;
+    public User(String userId, String name, String surname){
+        this.userId = userId;
         this.name = name;
         this.surname = surname;
     }

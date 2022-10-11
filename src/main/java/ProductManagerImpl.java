@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Objects;
 
 public class ProductManagerImpl implements ProductManager {
     List<Product> productsList;
@@ -15,7 +16,7 @@ public class ProductManagerImpl implements ProductManager {
     }
 
     public void addOrder(Order order) {
-        this.ordersList.add(order);
+        ordersList.add(order);
     }
 
     public Order processOrder() {
@@ -32,16 +33,27 @@ public class ProductManagerImpl implements ProductManager {
 
     public void addUser(String s, String name, String surname) {
         User newUser = new User(s, name, surname);
-        this.usersList.add(newUser);
+        usersList.add(newUser);
     }
 
     public void addProduct(String productId, String name, double price) {
         Product newProduct = new Product(productId, name, price);
-        this.productsList.add(newProduct);
+        productsList.add(newProduct);
     }
 
     public Product getProduct(String productId) {
-
+        Product getProduct = new Product("","",0);
+        int i = 0;
+        boolean found = false;
+        while(i<productsList.size() && !found)
+        {
+            if(Objects.equals(productsList.get(i).getProductId(), productId)){
+                getProduct=productsList.get(i);
+                found = true;
+            }
+            i++;
+        }
+        return getProduct;
     }
 
     public int numUsers() {
@@ -57,6 +69,6 @@ public class ProductManagerImpl implements ProductManager {
     }
 
     public int numSales(String b001) {
-
+        return getProduct(b001).getNumSales();
     }
 }
