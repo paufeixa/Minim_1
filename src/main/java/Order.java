@@ -6,6 +6,5 @@ public class Order {
     }
 
     public void addLP(int quantity, String productId){
-                
     }
 }
