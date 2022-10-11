@@ -26,4 +26,8 @@ public class Product {
     public int getNumSales(){
         return numSales;
     }
+
+    public void newSales(int quantity){
+        numSales = numSales + quantity;
+    }
 }
