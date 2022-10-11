@@ -4,7 +4,7 @@ public interface ProductManager {
     public List<Product> productsByPrice();
     public List<Product> productsBySales();
     public void addOrder(Order order);
-    public Order processOrder();
+    public Order processOrder() throws NoOrdersException;
     public List<Order> ordersByUser(String userId);
     /////////////////////////////////////////////
     ////////////////////////////////////////////

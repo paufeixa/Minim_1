@@ -68,7 +68,7 @@ public class ProductManagerImplTest {
     }
 
     @Test
-    public void processOrderTest() {
+    public void processOrderTest() throws NoOrdersException {
         Assert.assertEquals(3, this.pm.numUsers());
         Assert.assertEquals(4, this.pm.numProducts());
         Assert.assertEquals(3, this.pm.numOrders());
@@ -107,7 +107,7 @@ public class ProductManagerImplTest {
     }
 
     @Test
-    public void productsSortByNumSales() {
+    public void productsSortByNumSales() throws NoOrdersException {
         processOrderTest();
 
         List<Product> products = this.pm.productsBySales();
@@ -129,7 +129,7 @@ public class ProductManagerImplTest {
     }
 
     @Test
-    public void ordersByUserTest() {
+    public void ordersByUserTest() throws NoOrdersException {
         processOrderTest();
         List<Order> orders1 = this.pm.ordersByUser("1111111");
         Assert.assertEquals(2, orders1.size());
